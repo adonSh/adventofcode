@@ -1,0 +1,6 @@
+Bit of an unconventional solution. The shell scripts run instances of the
+intcode computer and print all possible outputs. The largest output found with
+sort is the solution. In the case of part 2 (b.sh), use the make_pipes.sh
+script to create named fifos that go before and after each "amplifier." The
+begin and end pipes must be kept open during the computation. Just redirect a
+cat to the pipe and leave it in the background while you run the script.

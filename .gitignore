@@ -1,2 +1,5 @@
+a.out
 *.swp
 *.txt
+*.o
+*.ali

@@ -1,3 +1,5 @@
+local M = {}
+
 local binary_to_string = function(n)
   local s = ''
 
@@ -151,7 +153,7 @@ local co2_rating = function(ns)
   return candidates[1]
 end
 
-local main = function()
+M.get_input = function()
   local ns = {}
 
   while true do
@@ -164,13 +166,21 @@ local main = function()
     table.insert(ns, n)
   end
 
-  local g = gamma(ns)
-  local e = epsilon(g)
-  local o2 = o2_rating(ns)
-  local co2 = co2_rating(ns)
-
-  print(binary_to_decimal(g) * binary_to_decimal(e))
-  print(binary_to_decimal(o2) * binary_to_decimal(co2))
+  return ns
 end
 
-main()
+M.p1 = function(input)
+  local g = gamma(input)
+  local e = epsilon(g)
+
+  return binary_to_decimal(g) * binary_to_decimal(e)
+end
+
+M.p2 = function(input)
+  local o2 = o2_rating(input)
+  local co2 = co2_rating(input)
+
+  return binary_to_decimal(o2) * binary_to_decimal(co2)
+end
+
+return M

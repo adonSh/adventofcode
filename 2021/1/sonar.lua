@@ -1,3 +1,5 @@
+local M = {}
+
 local count_increases = function(ns)
   local num = 0
   
@@ -24,7 +26,7 @@ local count_windows = function(ns)
   return num
 end
 
-local main = function()
+M.get_input = function()
   local ns = {}
 
   while true do
@@ -33,8 +35,15 @@ local main = function()
     table.insert(ns, tonumber(l))
   end
 
-  print(count_increases(ns))
-  print(count_windows(ns))
+  return ns
 end
 
-main()
+M.p1 = function(input)
+  return count_increases(input)
+end
+
+M.p2 = function(input)
+  return count_windows(input)
+end
+
+return M

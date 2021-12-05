@@ -1,3 +1,5 @@
+local M = {}
+
 local calculate_final_position = function(directions)
   local position = { x = 0, y = 0 }
 
@@ -36,7 +38,7 @@ local calculate_with_aim = function(directions)
   return position
 end
 
-local main = function()
+M.get_input = function()
   local directions = {}
 
   while true do
@@ -46,10 +48,17 @@ local main = function()
     table.insert(directions, { d(), tonumber(d()) })
   end
 
-  local pos = calculate_final_position(directions)
-  print(pos.x * pos.y)
-  local pos2 = calculate_with_aim(directions)
-  print(pos2.x * pos2.y)
+  return directions
 end
 
-main()
+M.p1 = function(input)
+  local pos = calculate_final_position(input)
+  return pos.x * pos.y
+end
+
+M.p2 = function(input)
+  local pos = calculate_with_aim(input)
+  return pos.x * pos.y
+end
+
+return M

@@ -2,6 +2,8 @@ local days = {
   require('1/sonar'),
   require('2/dive'),
   require('3/binary'),
+  require('4/squid'),
+  require('5/hydrothermal'),
 }
 
 local main = function()

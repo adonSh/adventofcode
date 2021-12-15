@@ -37,7 +37,7 @@ end
 
 local sim = function(fish)
   local moms = fish[0]
-  
+
   for i = 0, #fish - 1 do
     fish[i] = fish[i + 1]
   end

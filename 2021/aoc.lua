@@ -6,6 +6,7 @@ local days = {
   require('5/hydrothermal'),
   require('6/lanternfish'),
   require('7/whales'),
+  require('8/segment'),
 }
 
 local main = function()

@@ -1,9 +1,9 @@
 from sys import stdin
 
-def priority(a):
+def priority(a: str) -> int:
     return ord(a) - 96 if a.islower() else ord(a) - 38
 
-def p1(sacks):
+def p1(sacks: list[tuple[str, str]]) -> int:
     common = []
     for s in sacks:
         for t in s[0]:
@@ -13,7 +13,7 @@ def p1(sacks):
 
     return sum(map(priority, common))
 
-def p2(sacks):
+def p2(sacks: list[str]) -> int:
     badges = []
     for i in range(0, len(sacks), 3):
         for t in sacks[i]:
@@ -23,7 +23,7 @@ def p2(sacks):
 
     return sum(map(priority, badges))
 
-def main():
+def main() -> None:
     lines = [l.strip() for l in stdin]
     sacks = [(l[:len(l)//2], l[len(l)//2:]) for l in lines]
 

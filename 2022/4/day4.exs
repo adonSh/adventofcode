@@ -8,10 +8,7 @@ defmodule Day4 do
   end
 
   def overlaps_partially([[a,b],[c,d]]) do
-    MapSet.intersection(MapSet.new(a..b), MapSet.new(c..d))
-    |> MapSet.to_list()
-    |> length()
-    |> Kernel.>(0)
+    not Range.disjoint?(a..b, c..d)
   end
 end
 
@@ -22,5 +19,5 @@ pairs =
   |> Enum.map(fn pair -> Enum.map(pair, fn p -> String.split(p, "-") end) end)
   |> Enum.map(fn pair -> Enum.map(pair, fn p -> Enum.map(p, &String.to_integer/1) end) end)
 
-pairs |> Enum.filter(&Day4.overlaps_fully/1) |> length() |> IO.puts()
-pairs |> Enum.filter(&Day4.overlaps_partially/1) |> length() |> IO.puts()
+pairs |> Enum.count(&Day4.overlaps_fully/1) |> IO.puts()
+pairs |> Enum.count(&Day4.overlaps_partially/1) |> IO.puts()

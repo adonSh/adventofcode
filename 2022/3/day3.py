@@ -11,7 +11,7 @@ def p1(sacks: list[tuple[str, str]]) -> int:
                 common.append(t)
                 break
 
-    return sum(map(priority, common))
+    return sum([priority(c) for c in common])
 
 def p2(sacks: list[str]) -> int:
     badges = []
@@ -21,7 +21,7 @@ def p2(sacks: list[str]) -> int:
                 badges.append(t)
                 break
 
-    return sum(map(priority, badges))
+    return sum([priority(b) for b in badges])
 
 def main() -> None:
     lines = [l.strip() for l in stdin]

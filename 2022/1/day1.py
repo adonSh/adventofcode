@@ -1,10 +1,10 @@
 from sys import stdin
 
-def p1(ns):
-    return max(map(sum, ns))
+def p1(ns: list[list[int]]) -> int:
+    return max([sum(n) for n in ns])
 
-def p2(ns):
-    return sum(sorted(map(sum, ns))[-3:])
+def p2(ns: list[list[int]]) -> int:
+    return sum(sorted([sum(n) for n in ns])[-3:])
 
 def main():
     lines = [line.strip() for line in stdin]

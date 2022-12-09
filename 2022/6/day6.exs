@@ -2,8 +2,8 @@ defmodule Day6 do
   def main() do
     buf = IO.read(:line) |> String.trim() |> String.to_charlist()
 
-    IO.puts(find_marker(buf, 4))
-    IO.puts(find_marker(buf, 14))
+    buf |> find_marker(4) |> IO.puts()
+    buf |> find_marker(14) |> IO.puts()
   end
 
   defp find_marker(buf, len), do: find_marker(buf, len, 0)

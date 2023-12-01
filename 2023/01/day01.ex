@@ -1,4 +1,4 @@
-defmodule Day1 do
+defmodule Day01 do
   def get_input(file) do
     file
     |> IO.read(:eof)

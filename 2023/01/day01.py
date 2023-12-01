@@ -1,5 +1,3 @@
-import sys
-
 def get_input(file):
     return [line.strip() for line in file]
 
@@ -16,8 +14,9 @@ def part2(puzzle_input):
             .replace('six', 's6x')\
             .replace('seven', 's7n')\
             .replace('eight', 'e8t')\
-            .replace('nine', 'n9n')
-        for line in puzzle_input]
+            .replace('nine', 'n9e')
+        for line in puzzle_input
+    ]
 
     return sum([firstlast(line) for line in parsed])
 

@@ -1,11 +1,15 @@
-EXE = aoc23.exs
-EBIN = ebin
+EBIN  = ebin
+SHELL = /bin/bash
+OBJS  = $(shell echo $(EBIN)/Elixir.Day{01..02}.beam)
 
-all: $(wildcard */*.ex)
-	elixirc -o $(EBIN) $^
-
-run:
-	elixir -pa $(EBIN) $(EXE) $(day)
+all: $(OBJS)
 
 clean:
 	rm -rf $(EBIN)/*.beam
+
+run:
+	elixir -pa $(EBIN) aoc23.exs $(day)
+
+.SECONDEXPANSION:
+$(EBIN)/Elixir.Day%.beam: $$*/day$$*.ex
+	elixirc -o $(EBIN) $^

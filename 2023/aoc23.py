@@ -2,7 +2,7 @@ import sys
 
 days = {
     1: __import__('01'),
-#   2: __import__('02'),
+    2: __import__('02'),
 #   3: __import__('03'),
 #   4: __import__('04'),
 #   5: __import__('05'),
@@ -28,7 +28,7 @@ days = {
 #   25: __import__('25'),
 }
 
-def do_the_thing(day, file=sys.stdin):
+def solve(day, file=sys.stdin):
     puzzle_input = day.get_input(file)
     print(day.part1(puzzle_input))
     print(day.part2(puzzle_input))
@@ -36,12 +36,12 @@ def do_the_thing(day, file=sys.stdin):
 while True:
     if len(sys.argv) > 1:
         d = int(sys.argv[1])
-        do_the_thing(days[d])
+        solve(days[d])
         break
     try:
         d = int(input('Day? '))
         with open(f'{d:02}/input.txt') as f:
-            do_the_thing(days[d], file=f)
+            solve(days[d], file=f)
     except KeyboardInterrupt:
         break
     except Exception as e:

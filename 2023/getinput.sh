@@ -11,5 +11,5 @@ if [[ ! -f cookie.txt ]]; then
 fi
 
 [[ -d "$fname" ]] || mkdir "$fname"
-curl -b "$(cat cookie.txt)" "$addr" > "${fname}/input.txt"
+curl --cookie "$(cat cookie.txt)" "$addr" > "${fname}/input.txt"
 echo "from .day${fname} import *" > "${fname}/__init__.py"

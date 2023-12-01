@@ -1,6 +1,8 @@
 a.out
+__pycache__/
 *.swp
 *.txt
 *.o
 *.ali
 *.beam
+*.pyc

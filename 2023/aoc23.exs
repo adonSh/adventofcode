@@ -32,7 +32,11 @@ defmodule Main do
   end
 
   def loop() do
-    d = IO.gets("Day? ") |> String.trim()
+    d =
+      case IO.gets("Day? ") |> String.trim() do
+        "q" -> System.halt(0)
+        n -> n
+      end
     {:ok, file} = File.open("#{String.pad_leading(d, 2, "0")}/input.txt")
     d |> String.to_integer() |> days() |> solve(file)
     File.close(file)

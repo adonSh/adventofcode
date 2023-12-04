@@ -29,7 +29,7 @@ defmodule Day01 do
   end
 
   defp firstlast(s) do
-    digits = for c <- String.to_charlist(s), ?1 <= c and c <= ?9, do: c - ?0
+    digits = for <<c <- s>>, ?1 <= c and c <= ?9, do: c - ?0
     case {List.first(digits), List.last(digits)} do
       {nil, nil} -> 0
       {tens, ones} -> tens * 10 + ones

@@ -8,8 +8,7 @@ defmodule Day04 do
       |> String.split("|")
       |> Enum.map(fn ns -> ns
                            |> String.split(" ", trim: true)
-                           |> Enum.map(fn n -> String.to_integer(n) end)
-                  end)
+                           |> Enum.map(fn n -> String.to_integer(n) end) end)
     end
   end
 

@@ -1,6 +1,6 @@
 EBIN  = ebin
 SHELL = /bin/bash
-OBJS  = $(shell echo $(EBIN)/Elixir.Day{01..05}.beam)
+OBJS  = $(shell echo $(EBIN)/Elixir.Day{01..06}.beam)
 
 all: $(OBJS)
 

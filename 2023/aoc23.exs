@@ -33,8 +33,9 @@ defmodule Main do
 
   def loop() do
     d =
-      case IO.gets("Day? ") |> String.trim() do
+      case IO.gets("> ") |> String.trim() do
         "q" -> System.halt(0)
+        "" -> loop()
         n -> n
       end
     {:ok, file} = File.open("#{String.pad_leading(d, 2, "0")}/input.txt")

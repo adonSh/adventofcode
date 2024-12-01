@@ -16,13 +16,13 @@ defmodule Day09 do
     Enum.sum(for sequence <- input, do: gettozero(sequence, 2))
   end
 
-  defp gettozero(steps, part \\ 1) do
+  defp gettozero(steps, version \\ 1) do
     if Enum.all?(steps, fn s -> s == 0 end) do
       0
     else
-      case part do
-        1 -> List.last(steps) + gettozero(step_size(steps), part)
-        2 -> List.first(steps) - gettozero(step_size(steps), part)
+      case version do
+        1 -> List.last(steps) + gettozero(step_size(steps), version)
+        2 -> List.first(steps) - gettozero(step_size(steps), version)
       end
     end
   end

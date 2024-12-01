@@ -3,7 +3,7 @@ import sys
 days = {
     1: __import__('01'),
     2: __import__('02'),
-#   3: __import__('03'),
+    3: __import__('03'),
 #   4: __import__('04'),
 #   5: __import__('05'),
 #   6: __import__('06'),
@@ -39,7 +39,7 @@ while True:
         solve(days[d])
         break
     try:
-        d = int(input('Day? '))
+        d = int(input('> '))
         with open(f'{d:02}/input.txt') as f:
             solve(days[d], file=f)
     except KeyboardInterrupt:
